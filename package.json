@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "description": "[![Actions Status](https://github.com/Nikolay2020kov/backend-project-4/workflows/hexlet-check/badge.svg)](https://github.com/Nikolay2020kov/backend-project-4/actions)",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "bin": {
+    "page-loader": "bin/page-loader.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +27,9 @@
     "nock": "^13.2.9"
   },
   "dependencies": {
-    "axios": "^1.2.1",
-    "commander": "^9.4.1"
+    "axios": "^1.3.0",
+    "commander": "^9.4.1",
+    "fs": "^0.0.1-security",
+    "prompt-confirm": "^2.0.4"
   }
 }
