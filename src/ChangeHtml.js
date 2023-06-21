@@ -15,7 +15,7 @@ const ChangeHtml = (html, url, a) => new Promise((resolve, reject) => {
   const resArrs = arrs.map((img) => `${b}${'/'}${a}${'-'}${img}`);
   const Old = arr;
   const New = resArrs;
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i += 1) {
     $('img').each(function arr2() {
       const Src = $(this)
         .attr('src')

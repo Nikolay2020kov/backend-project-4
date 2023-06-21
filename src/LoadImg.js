@@ -3,13 +3,9 @@ import LoadS from './axiosImg.js';
 const LoadImg = (html) => new Promise((resolve, reject) => {
   const promises = [];
 
-  for (const _link of html[1]) {
-    promises.push(new Promise((resolve) => {
-      LoadS(_link).then((a) => {
-        resolve(a);
-      });
-    }));
-  }
+  html[1].forEach((link) => {
+    promises.push(LoadS(link));
+  });
 
   Promise.all(promises).then((newLink) => {
     resolve([
@@ -17,6 +13,8 @@ const LoadImg = (html) => new Promise((resolve, reject) => {
       newLink,
       html[2],
     ]);
+  }).catch(() => {
+    reject(new Error('Не удалось скачать картинки'));
   });
 });
 

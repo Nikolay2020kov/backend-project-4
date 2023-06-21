@@ -20,7 +20,7 @@ const Touch = (html, a, file, DirNames, option, Path, newpath) => new Promise((r
     fsp
       .mkdir(DirNames, { recursive: true })
       .then(() => {
-        for (let i = 0; i < Links.length; i++) {
+        for (let i = 0; i < Links.length; i += 1) {
           Links[i]
             .pipe(
               fs.createWriteStream(
@@ -50,7 +50,7 @@ const Touch = (html, a, file, DirNames, option, Path, newpath) => new Promise((r
       fsp
         .mkdir(path.join(Dirname, DirNames), { recursive: true })
         .then(() => {
-          for (let i = 0; i < Links.length; i++) {
+          for (let i = 0; i < Links.length; i += 1) {
             Links[i]
               .pipe(
                 fs.createWriteStream(
